@@ -1,5 +1,6 @@
 package com.hcy.javaailangchain4j;
 
+import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class JavaAiLangchain4jApplicationTests {
     @Autowired
     private OpenAiChatModel openAiChatModel;
+    @Autowired
+    private ChatLanguageModel chatLanguageModel;
 
     @Test
     void contextLoads() {
@@ -29,5 +32,11 @@ class JavaAiLangchain4jApplicationTests {
     @Test
     public void testOpenAIDemo() {
         System.out.println(openAiChatModel.chat("你是谁?"));
+    }
+
+
+    @Test
+    public void testOpenAIDemo_1() {
+        System.out.println(chatLanguageModel.chat("你是谁?"));
     }
 }
