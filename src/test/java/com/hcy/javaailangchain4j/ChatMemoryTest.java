@@ -2,6 +2,7 @@ package com.hcy.javaailangchain4j;
 
 import com.hcy.javaailangchain4j.assistant.Assistant;
 import com.hcy.javaailangchain4j.assistant.MemoryChatAssistant;
+import com.hcy.javaailangchain4j.assistant.SeparateChatAssistant;
 import dev.langchain4j.community.model.dashscope.QwenChatModel;
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.ChatMessage;
@@ -94,5 +95,16 @@ public class ChatMemoryTest {
     public void testChatMemory4() {
         System.out.println(memoryChatAssistant.chat("我是hcy"));
         System.out.println(memoryChatAssistant.chat("我是谁？"));
+    }
+
+
+    @Autowired
+    private SeparateChatAssistant separateChatAssistant;
+
+    @Test
+    public void testChatMemory5() {
+        System.out.println(separateChatAssistant.chat(1,"我是hcy"));
+        System.out.println(separateChatAssistant.chat(1,"我是谁？"));
+        System.out.println(separateChatAssistant.chat(2,"我是谁？"));
     }
 }
