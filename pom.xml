@@ -22,6 +22,11 @@
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
     </properties>
     <dependencies>
+        <!-- MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
         <!-- langchain4j 高级功能 -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
