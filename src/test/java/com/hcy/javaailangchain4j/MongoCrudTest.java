@@ -19,8 +19,16 @@ public class MongoCrudTest {
     /**
      *
      */
+//    @Test
+//    public void insert() {
+//        mongoTemplate.insert(new ChatMessages(2l, "聊天记录2"));
+//    }
+
     @Test
-    public void insert() {
-        mongoTemplate.insert(new ChatMessages(2l, "聊天记录2"));
+    public void insert2() {
+        ChatMessages message = new ChatMessages();
+        message.setContent("聊天记录列表");
+        mongoTemplate.insert(message);
     }
+
 }
