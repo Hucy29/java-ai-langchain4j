@@ -23,6 +23,8 @@ public class ChatMessages {
     @Id
     private ObjectId messageId;
 
+    private String memoryId;
+
     /**
      * 储存当前聊天记录列表的json字段
      * 包含 userMessage 和 AiMessage

@@ -1,8 +1,10 @@
 package com.hcy.javaailangchain4j.assistant.config;
 
+import com.hcy.javaailangchain4j.assistant.store.MongoChatMemoryStore;
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.store.memory.chat.InMemoryChatMemoryStore;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,6 +15,9 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class SeparateChatAssistantConfig {
+    @Autowired
+    private MongoChatMemoryStore mongoChatMemoryStore;
+
     /**
      * bean的名字一定要和SeparateChatAssistant类中的@AiService.chatMemoryProvider的值保持一致，这样才能在@AiService读取到bean的配置
      * @return
@@ -28,7 +33,9 @@ public class SeparateChatAssistantConfig {
                 //SingleSlotChatMemoryStore：memoryId+messages
                 //而InMemoryChatMemoryStore是用的ConcurrentHashMap，memoryId为key,messages为value
                 //InMemoryChatMemoryStore更适合多线程
-                .chatMemoryStore(new InMemoryChatMemoryStore())
+                //屏蔽掉InMemoryChatMemoryStore，使用自己创建的mongoChatMemoryStore
+                //.chatMemoryStore(new InMemoryChatMemoryStore())
+                .chatMemoryStore(mongoChatMemoryStore)
                 .build();
     }
 }
