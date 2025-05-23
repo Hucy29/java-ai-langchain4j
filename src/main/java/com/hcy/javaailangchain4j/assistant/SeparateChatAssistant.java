@@ -1,6 +1,7 @@
 package com.hcy.javaailangchain4j.assistant;
 
 import dev.langchain4j.service.MemoryId;
+import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.spring.AiService;
 
@@ -24,5 +25,8 @@ public interface SeparateChatAssistant {
      * @param userMessage 会话内容
      * @return
      */
+    //@SystemMessage：提示词，作用：设定角色，塑造AI助手的专业身份，明确助手的能力范围
+    //@SystemMessage("你是我的好朋友，请用河南话回答问题。")
+    @SystemMessage("你是我的好朋友，请用东北话回答问题。")
     String chat(@MemoryId int memoryId, @UserMessage String userMessage);
 }
