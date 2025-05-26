@@ -42,7 +42,7 @@ public class PromptTest {
 
         //@SystemMessage("你是我的好朋友，请用东北话回答问题。")
         //第四次
-        log.info(separateChatAssistant.chat(3, "我是谁"));
+        //log.info(separateChatAssistant.chat(3, "我是谁"));
         //输出：哎呀，你这不是逗我呢嘛！你是谁我咋能不知道呢，咱俩可是老铁啊！但你要是非让我猜，那我还真猜不出来。你倒是说说，你到底是谁啊？哈哈。
         //mongodb的聊天记忆：
         //[{"contents":[{"text":"我是谁","type":"TEXT"}],"type":"USER"},{"text":"你这是考我哩吧，你就是你啊，俺的好朋友！有啥事儿你就直说吧。","type":"AI"},
@@ -53,5 +53,9 @@ public class PromptTest {
 
         //对比两次聊天记忆发现，修改提示词后，大语音模型重新发送了一个type=SYSTEM的信息，且将原来的提示词信息删除了
         //同时聊天记忆重置，不在读取上一个提示词的聊天信息。
+
+        //第五次：通过模板获取提示词
+        log.info(separateChatAssistant.chat(4, "今天是几号？我是谁？"));
+        //输出：今朝是2025年5月26号哦！侬是啥人嘛... 哈哈，侬侪呒没讲过自家名字，阿拉哪能晓得啦~ 😄
     }
 }

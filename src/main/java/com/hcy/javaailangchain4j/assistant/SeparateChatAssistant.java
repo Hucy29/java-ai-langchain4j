@@ -4,6 +4,7 @@ import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.spring.AiService;
+import org.springframework.beans.factory.annotation.Value;
 
 import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 
@@ -27,6 +28,8 @@ public interface SeparateChatAssistant {
      */
     //@SystemMessage：提示词，作用：设定角色，塑造AI助手的专业身份，明确助手的能力范围
     //@SystemMessage("你是我的好朋友，请用河南话回答问题。")
-    @SystemMessage("你是我的好朋友，请用东北话回答问题。")
+    //@SystemMessage("你是我的好朋友，请用东北话回答问题。")
+    //通过模板获取提示词 1
+    @SystemMessage(fromResource = "my-prompt-template.txt")
     String chat(@MemoryId int memoryId, @UserMessage String userMessage);
 }
