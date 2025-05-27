@@ -3,6 +3,7 @@ package com.hcy.javaailangchain4j.assistant;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
+import dev.langchain4j.service.V;
 import dev.langchain4j.service.spring.AiService;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -32,4 +33,10 @@ public interface SeparateChatAssistant {
     //通过模板获取提示词 1
     @SystemMessage(fromResource = "my-prompt-template.txt")
     String chat(@MemoryId int memoryId, @UserMessage String userMessage);
+
+    @UserMessage("你是我的好朋友，请用粤语回答问题。{{msg}}")
+    String chat1(@MemoryId int memoryId,  @V("msg") String userMessage);
+
+    @SystemMessage(fromResource = "my-prompt-template3.txt")
+    String chat2(@MemoryId int memoryId, @UserMessage String userMessage,@V("username") String username,@V("age") int age);
 }

@@ -58,4 +58,32 @@ public class PromptTest {
         log.info(separateChatAssistant.chat(4, "今天是几号？我是谁？"));
         //输出：今朝是2025年5月26号哦！侬是啥人嘛... 哈哈，侬侪呒没讲过自家名字，阿拉哪能晓得啦~ 😄
     }
+
+    /**
+     * 测试 chat1 V注解
+     */
+    @Test
+    public void testPrompt1() {
+        log.info(separateChatAssistant.chat1(5, "今天是几号？我是谁？"));
+        //{
+        //  "_id": {
+        //    "$oid": "6835874f3ba343fdc1a2c0f4"
+        //  },
+        //  "memoryId": 5,
+        //  "content": "[{\"contents\":[{\"text\":\"你是我的好朋友，请用粤语回答问题。今天是几号？我是谁？\",\"type\":\"TEXT\"}],\"type\":\"USER\"},{\"text\":\"你好呀，好朋友！今日几号我就唔知啦，因为我冇办法睇到实际嘅日期。至于你系边个，我谂你应该系一个好有心思嘅人，会谂住用粤语同我倾计。不过如果你问我你嘅真实身份嘅话，咁就真係对唔住喇，我真係答唔到你。希望呢个回答对你有少少帮助啦！如果仲有其他问题想问，记得继续揾我倾计吖！\",\"type\":\"AI\"}]"
+        //}
+    }
+
+    /**
+     * 测试 chat2 V注解
+     */
+    @Test
+    public void testPrompt2() {
+        //从数据库获取用户信息
+        String userName = "小丽";
+        int age = 18;
+
+        log.info(separateChatAssistant.chat2(6, "我是谁？我多大了", userName, age));
+        //输出：哎呀，小丽你这还问我呢？你不就是我滴好朋友小丽嘛，今年18岁啦！😊
+    }
 }
