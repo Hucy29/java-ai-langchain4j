@@ -97,6 +97,11 @@ public class ChatMemoryTest {
         System.out.println(memoryChatAssistant.chat("我是谁？"));
     }
 
+    @Test
+    public void testChatMemory4_1() {
+        System.out.println(memoryChatAssistant.chat1("我是hcy"));
+        System.out.println(memoryChatAssistant.chat1("我是谁？"));
+    }
 
     @Autowired
     private SeparateChatAssistant separateChatAssistant;
