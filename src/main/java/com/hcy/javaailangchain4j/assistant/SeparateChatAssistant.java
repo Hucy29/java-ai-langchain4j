@@ -1,5 +1,6 @@
 package com.hcy.javaailangchain4j.assistant;
 
+import com.hcy.javaailangchain4j.assistant.tools.CalculatorTools;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
@@ -18,7 +19,8 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
         wiringMode = EXPLICIT,
         chatModel = "qwenChatModel",
         //chatMemory = "chatMemory",此处不再配置会话记忆轮次，因为在创建chatMemoryProvider的bean时，已经配置。
-        chatMemoryProvider = "chatMemoryProvider"
+        chatMemoryProvider = "chatMemoryProvider",
+        tools = {"calculatorTools"}
 )
 public interface SeparateChatAssistant {
     /**
