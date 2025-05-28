@@ -22,6 +22,19 @@
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
     </properties>
     <dependencies>
+        <!-- mysql  mysql-connector-j 适用于mysql8.0.30之后，mysql-connector-java适用于之前-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
+
+        <!-- mybatis-plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+
         <!-- MongoDB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
