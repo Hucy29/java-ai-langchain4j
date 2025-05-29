@@ -5,12 +5,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hcy.javaailangchain4j.assistant.entites.AppointmentDO;
 import com.hcy.javaailangchain4j.assistant.mapper.AppointmentMapper;
 import com.hcy.javaailangchain4j.assistant.service.AppointmentService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author 贫道重阳
  * @date 2025/5/28 22:42
  * @description
  */
+@Service
 public class AppointmentServiceImpl extends ServiceImpl<AppointmentMapper, AppointmentDO> implements AppointmentService {
     @Override
     public AppointmentDO getOne(AppointmentDO request) {
