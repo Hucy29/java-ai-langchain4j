@@ -1,4 +1,4 @@
-package com.hcy.javaailangchain4j.assistant.tools;
+package com.hcy.javaailangchain4j.tools;
 
 import dev.langchain4j.agent.tool.P;
 import dev.langchain4j.agent.tool.Tool;

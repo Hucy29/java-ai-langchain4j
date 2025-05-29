@@ -1,12 +1,10 @@
 package com.hcy.javaailangchain4j.assistant;
 
-import com.hcy.javaailangchain4j.assistant.tools.CalculatorTools;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
 import dev.langchain4j.service.spring.AiService;
-import org.springframework.beans.factory.annotation.Value;
 
 import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 

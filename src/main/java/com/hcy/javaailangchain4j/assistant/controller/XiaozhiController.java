@@ -1,7 +1,7 @@
 package com.hcy.javaailangchain4j.assistant.controller;
 
 import com.hcy.javaailangchain4j.assistant.XiaozhiAgent;
-import com.hcy.javaailangchain4j.assistant.bean.ChatForm;
+import com.hcy.javaailangchain4j.bean.ChatForm;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package com.hcy.javaailangchain4j.assistant.store;
+package com.hcy.javaailangchain4j.store;
 
-import com.hcy.javaailangchain4j.assistant.bean.ChatMessages;
+import com.hcy.javaailangchain4j.bean.ChatMessages;
 import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.data.message.ChatMessageDeserializer;
 import dev.langchain4j.data.message.ChatMessageSerializer;

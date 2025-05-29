@@ -1,4 +1,4 @@
-package com.hcy.javaailangchain4j.assistant.config;
+package com.hcy.javaailangchain4j.config;
 
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;

@@ -1,4 +1,4 @@
-package com.hcy.javaailangchain4j.assistant.bean;
+package com.hcy.javaailangchain4j.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

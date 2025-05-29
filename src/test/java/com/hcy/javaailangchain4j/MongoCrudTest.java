@@ -1,6 +1,6 @@
 package com.hcy.javaailangchain4j;
 
-import com.hcy.javaailangchain4j.assistant.bean.ChatMessages;
+import com.hcy.javaailangchain4j.bean.ChatMessages;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;

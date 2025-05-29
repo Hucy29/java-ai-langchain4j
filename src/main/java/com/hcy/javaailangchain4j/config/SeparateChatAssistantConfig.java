@@ -1,9 +1,8 @@
-package com.hcy.javaailangchain4j.assistant.config;
+package com.hcy.javaailangchain4j.config;
 
-import com.hcy.javaailangchain4j.assistant.store.MongoChatMemoryStore;
+import com.hcy.javaailangchain4j.store.MongoChatMemoryStore;
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
-import dev.langchain4j.store.memory.chat.InMemoryChatMemoryStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
