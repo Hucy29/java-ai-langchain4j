@@ -12,7 +12,7 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
  * @date 2025/5/27 17:42
  * @description
  */
-@AiService(wiringMode = EXPLICIT,chatModel = "qwenChatModel",chatMemoryProvider = "chatMemoryProviderXiaozhi")
+@AiService(wiringMode = EXPLICIT,chatModel = "qwenChatModel",chatMemoryProvider = "chatMemoryProviderXiaozhi",tools = {"appointmentTools"})
 public interface XiaozhiAgent {
     @SystemMessage(fromResource = "xiaozhi-prompt-template.txt")
     String chat(@MemoryId Long memoryId, @UserMessage String message);
