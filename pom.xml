@@ -22,6 +22,30 @@
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
     </properties>
     <dependencies>
+        <!-- 简单的rag实现  Retrieval-Augmented Generation  检索增强生成-->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
+        </dependency>
+
+        <!-- PDFBox文档解析器 ApachePdfBoxDocumentParser，可以解析PDF文件 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>
+        </dependency>
+
+        <!-- POI文档解析器 ApachePoiDocumentParser，可以解析微软办公软件的文件格式，例如：DOC、DOCX、PPT、PPTX、XLS、XLSX等 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-poi</artifactId>
+        </dependency>
+
+        <!-- Tika文档解析器 ApacheTikaDocumentParser，可以自动检测并解析几乎所有现有的文档格式 -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-tika</artifactId>
+        </dependency>
+
         <!-- mysql  mysql-connector-j 适用于mysql8.0.30之后，mysql-connector-java适用于之前-->
         <dependency>
             <groupId>com.mysql</groupId>
