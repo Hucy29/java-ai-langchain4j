@@ -22,6 +22,22 @@
         <mybatis-plus.version>3.5.11</mybatis-plus.version>
     </properties>
     <dependencies>
+        <!-- 流式输出 b-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-reactor</artifactId>
+        </dependency>
+        <!-- 流式输出 e-->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-pinecone</artifactId>
+        </dependency>
+
         <!-- 简单的rag实现  Retrieval-Augmented Generation  检索增强生成-->
         <dependency>
             <groupId>dev.langchain4j</groupId>

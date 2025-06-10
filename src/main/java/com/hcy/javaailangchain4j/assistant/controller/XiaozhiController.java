@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 /**
  * @author 贫道重阳
@@ -21,8 +22,8 @@ public class XiaozhiController {
     private XiaozhiAgent xiaozhiAgent;
 
     @Operation(summary = "对话")
-    @PostMapping("/chat")
-    public String chat(@RequestBody ChatForm chatForm) {
+    @PostMapping(value = "/chat", produces = "text/stream;charset=utf-8")
+    public Flux<String> chat(@RequestBody ChatForm chatForm) {
         return xiaozhiAgent.chat(chatForm.getMemoryId(), chatForm.getMessage());
     }
 }

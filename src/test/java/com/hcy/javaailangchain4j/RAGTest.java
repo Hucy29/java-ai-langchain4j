@@ -5,7 +5,9 @@ import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
 import dev.langchain4j.data.document.parser.TextDocumentParser;
 import dev.langchain4j.data.document.parser.apache.pdfbox.ApachePdfBoxDocumentParser;
 import dev.langchain4j.data.document.parser.apache.tika.ApacheTikaDocumentParser;
+import dev.langchain4j.data.document.splitter.DocumentByParagraphSplitter;
 import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.model.embedding.onnx.HuggingFaceTokenizer;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
 import lombok.extern.slf4j.Slf4j;
@@ -96,6 +98,37 @@ public class RAGTest {
         EmbeddingStoreIngestor.ingest(document,embeddingStore);
 
         //查看向量数据库内容
+        System.out.println(embeddingStore);
+    }
+
+    @Test
+    public void test4() {
+        Document document = FileSystemDocumentLoader.loadDocument("Document/协和简介.pdf",new ApachePdfBoxDocumentParser());
+
+        //创建文档分割器，段落文档分割器：以token分割
+        // 参数1：分段大小：每个段落最大token数量，默认值300
+        // 参数2：分段重叠大小，每个段落重叠的token数量，默认值30
+        // 参数3：token分词器,HuggingFaceTokenizer按token数量计算（对前两个参数有影响），默认值是字符分词器
+        DocumentByParagraphSplitter documentSplitter = new  DocumentByParagraphSplitter(
+                300,
+                30,
+                new HuggingFaceTokenizer());
+
+        //创建文档分割器，段落文档分割器，以字符分割
+        DocumentByParagraphSplitter documentSplitter_char = new  DocumentByParagraphSplitter(
+                300,
+                30);
+
+        //创建向量数据库,为了简单起见，先暂时使用基于内存的向量存储。
+        InMemoryEmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+
+        EmbeddingStoreIngestor embeddingStoreIngestor = EmbeddingStoreIngestor.builder()
+                .embeddingStore(embeddingStore)
+                .documentSplitter(documentSplitter)
+                .build();
+
+        embeddingStoreIngestor.ingest(document);
+
         System.out.println(embeddingStore);
     }
 }
